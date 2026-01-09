@@ -60,7 +60,7 @@ const Login = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="Enter Your Email"
               required
             />
           </div>
@@ -89,13 +89,7 @@ const Login = () => {
           </p>
         </div>
 
-        <div className="demo-credentials">
-          <p style={{ fontSize: '12px', color: '#999', marginTop: '20px', borderTop: '1px solid #eee', paddingTop: '15px' }}>
-            <strong>Demo Credentials:</strong><br/>
-            Patient: patient@demo.com / password<br/>
-            Doctor: doctor@demo.com / password
-          </p>
-        </div>
+        
       </div>
     </div>
   );

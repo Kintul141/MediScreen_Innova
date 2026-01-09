@@ -48,7 +48,7 @@ const Home = () => {
           style={{
             padding: '12px 30px',
             border: '2px solid #2196f3',
-            color: '#2196f3',
+            color: '#1663a3',
             textDecoration: 'none',
             borderRadius: '6px',
             fontWeight: '600',
@@ -74,69 +74,92 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Navbar />
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+  <div
+    style={{
+      minHeight: '100vh',
+      width: '100%',
+      backgroundImage: `url("https://media.istockphoto.com/id/1424369255/photo/man-with-a-healthy-heart.jpg?s=612x612&w=0&k=20&c=1rw3HVKnc9rNXbM9EUt8Cla9c9aVt4cFGw2qgupJzD4=")`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative'
+    }}
+  >
+    {/* Overlay for readability */}
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.55)',
+        backdropFilter: 'blur(2px)'
+      }}
+    />
 
-          {/* Patient Routes */}
-          <Route
-            path="/patient/dashboard"
-            element={
-              <RoleBasedRoute requiredRole="patient">
-                <PatientDashboard />
-              </RoleBasedRoute>
-            }
-          />
-          <Route
-            path="/patient/case/:id"
-            element={
-              <RoleBasedRoute requiredRole="patient">
-                <PatientCaseDetail />
-              </RoleBasedRoute>
-            }
-          />
-          <Route
-            path="/patient/reports"
-            element={
-              <RoleBasedRoute requiredRole="patient">
-                <PatientReports />
-              </RoleBasedRoute>
-            }
-          />
+    <Navbar />
 
-          {/* Doctor Routes */}
-          <Route
-            path="/doctor/dashboard"
-            element={
-              <RoleBasedRoute requiredRole="doctor">
-                <DoctorDashboard />
-              </RoleBasedRoute>
-            }
-          />
-          <Route
-            path="/doctor/case/:id"
-            element={
-              <RoleBasedRoute requiredRole="doctor">
-                <DoctorCaseDetail />
-              </RoleBasedRoute>
-            }
-          />
-          <Route
-            path="/doctor/reports"
-            element={
-              <RoleBasedRoute requiredRole="doctor">
-                <DoctorReports />
-              </RoleBasedRoute>
-            }
-          />
+    {/* Content Wrapper so overlay doesn't block clicks */}
+    <div style={{ position: 'relative', zIndex: 2, paddingBottom: '40px' }}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-          {/* 404 */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </AuthProvider>
+        <Route
+          path="/patient/dashboard"
+          element={
+            <RoleBasedRoute requiredRole="patient">
+              <PatientDashboard />
+            </RoleBasedRoute>
+          }
+        />
+        <Route
+          path="/patient/case/:id"
+          element={
+            <RoleBasedRoute requiredRole="patient">
+              <PatientCaseDetail />
+            </RoleBasedRoute>
+          }
+        />
+        <Route
+          path="/patient/reports"
+          element={
+            <RoleBasedRoute requiredRole="patient">
+              <PatientReports />
+            </RoleBasedRoute>
+          }
+        />
+
+        <Route
+          path="/doctor/dashboard"
+          element={
+            <RoleBasedRoute requiredRole="doctor">
+              <DoctorDashboard />
+            </RoleBasedRoute>
+          }
+        />
+        <Route
+          path="/doctor/case/:id"
+          element={
+            <RoleBasedRoute requiredRole="doctor">
+              <DoctorCaseDetail />
+            </RoleBasedRoute>
+          }
+        />
+        <Route
+          path="/doctor/reports"
+          element={
+            <RoleBasedRoute requiredRole="doctor">
+              <DoctorReports />
+            </RoleBasedRoute>
+          }
+        />
+
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </div>
+  </div>
+</AuthProvider>
+
     </Router>
   );
 }
