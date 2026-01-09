@@ -1,0 +1,151 @@
+.image-uploader {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.image-uploader h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.upload-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.upload-zone {
+  border: 2px dashed #2196f3;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  background-color: #ecf0f7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-zone:hover {
+  border-color: #1565c0;
+  background-color: #d9e5f5;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.upload-icon {
+  font-size: 48px;
+}
+
+.upload-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main-text {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sub-text {
+  color: #666;
+  font-size: 13px;
+}
+
+.preview-container {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f9f9f9;
+  padding: 15px;
+}
+
+.preview-container h3 {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.notes-section {
+  margin-bottom: 25px;
+}
+
+.notes-section label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.notes-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.upload-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.upload-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .upload-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-uploader {
+    padding: 20px;
+  }
+}

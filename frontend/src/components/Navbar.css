@@ -1,0 +1,109 @@
+.navbar {
+  background-color: #1e3a5f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-link:hover {
+  color: #64b5f6;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.user-name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-role {
+  color: #9cb4cc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logout-btn {
+  color: #dc3545;
+}
+
+.logout-btn:hover {
+  color: #c82333;
+}
+
+.signup-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.signup-btn:hover {
+  background-color: #1565c0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+}
